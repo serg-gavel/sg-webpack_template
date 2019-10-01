@@ -2,10 +2,14 @@
   "name": "sg-webpack_template",
   "version": "1.0.0",
   "description": "Webpack template",
-  "main": "index.js",
   "repository": "https://github.com/serg-gavel/sg-webpack_template",
   "author": "Sergey Gavelyuk",
   "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --open --mode development",
+    "build": "webpack --mode production"
+  },
   "devDependencies": {
     "path": "^0.12.7",
     "webpack": "^4.41.0",
