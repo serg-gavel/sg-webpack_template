@@ -28,12 +28,14 @@ module.exports = {
           "css-loader"
         ]
       },
+
       {
         test: /\.scss$/,
         use: [
           "style-loader",
           MiniCssExtractPlugin.loader,
           { loader: "css-loader", options: { sourceMap: true } },
+          { loader: "postcss-loader", options: { sourceMap: true } },
           { loader: "sass-loader", options: { sourceMap: true } }
         ]
       }
