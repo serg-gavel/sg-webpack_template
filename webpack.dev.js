@@ -8,8 +8,8 @@ module.exports = merge(common, {
   devServer: {
     port: 8081,
     overlay: { warnings: false, errors: true },
-    liveReload: true
-    // contentBase: "/dist"
+    liveReload: true,
+    contentBase: common.externals.paths.dist,
   },
   plugins: [
     new webpack.SourceMapDevToolPlugin({
