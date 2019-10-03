@@ -1,3 +1,3 @@
-import './js/common'
-import './css/main.css'
+import './js/various'
+// import './css/main.css' // CSS
 import './scss/main.scss'

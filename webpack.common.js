@@ -41,10 +41,6 @@ module.exports = {
       }
     ]
   },
-  devServer: {
-    overlay: true,
-    liveReload: true
-  },
   plugins: [
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output

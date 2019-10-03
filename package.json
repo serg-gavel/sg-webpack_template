@@ -7,8 +7,8 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --open --mode development",
-    "build": "webpack --mode production"
+    "dev": "webpack-dev-server --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
   },
   "browserslist": [
     "> 1%",
@@ -30,6 +30,7 @@
     "style-loader": "^1.0.0",
     "webpack": "^4.41.0",
     "webpack-cli": "^3.3.9",
-    "webpack-dev-server": "^3.8.1"
+    "webpack-dev-server": "^3.8.1",
+    "webpack-merge": "^4.2.2"
   }
 }
