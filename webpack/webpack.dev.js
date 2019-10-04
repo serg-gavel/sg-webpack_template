@@ -7,9 +7,9 @@ module.exports = merge(common, {
   devtool: "inline-source-map",
   devServer: {
     contentBase: common.externals.paths.dist,
-    port: 8081,
+    port: 8085,
     overlay: { warnings: false, errors: true },
-    liveReload: true,
+    liveReload: true
   },
   plugins: [
     new webpack.SourceMapDevToolPlugin({
@@ -17,5 +17,3 @@ module.exports = merge(common, {
     })
   ]
 });
-
-

@@ -1,3 +1,3 @@
-import './js/various'
-// import './css/main.css' // CSS
-import './scss/main.scss'
+import "./js/various";
+import './assets/css/main.css' // CSS
+import "./assets/scss/main.scss";
