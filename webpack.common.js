@@ -1,5 +1,8 @@
 const path = require("path");
+const fs = require("fs");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const PATHS = {
   src: path.join(__dirname, "./src"),
@@ -9,7 +12,7 @@ const PATHS = {
 
 module.exports = {
   externals: {
-    path: PATHS
+    paths: PATHS
   },
 
   entry: {
@@ -23,6 +26,12 @@ module.exports = {
   module: {
     rules: [
       { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        exclude: /node_modules/,
+        loader: "file-loader",
+        options: { name: "[name].[ext]" }
+      },
       {
         test: /\.css$/,
         use: [
@@ -52,12 +61,21 @@ module.exports = {
     ]
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      hash: false,
+      template: `${PATHS.src}/index.html`,
+      filename: "./index.html"
+    }),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // all options are optional
       filename: `${PATHS.assets}css/[name].css`,
       chunkFilename: "[id].css",
       ignoreOrder: false // Enable to remove warnings about conflicting order
-    })
+    }),
+    new CopyWebpackPlugin([
+      { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },
+      { from: `${PATHS.src}/static`, to: "" }
+    ])
   ]
 };
