@@ -1,21 +1,133 @@
-h1{
-    color: red;
+@import "utils/libs";
+@import "utils/vars";
+@import "utils/mixins";
+@import "utils/fonts";
+@import "utils/reset";
+
+html {
+  line-height: $mainLineHeight;
+  font-size: $mainFontSize;
+  color: $mainFontColor;
+  height: 100%;
+  @media screen and (max-width: $desktopWidth) {
+    font-size: 16px;
+  }
+  @media screen and (max-width: $tabletWidth) {
+    font-size: 15px;
+  }
+  @media screen and (max-width: $phoneWidth) {
+    font-size: 14px;
+  }
 }
-h2{
-    color: red;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $mainFont;
+  font-size: $mainFontSize;
+  font-weight: $mainFontWeight;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-h3{
-    color: red;
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
-h4{
-    color: red;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
 }
-.wrapper{
-    display: flex;
+
+a {
+  text-decoration: none;
 }
-body{
-    background: #000;
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
-p{
-    color: #fff;
+
+section,
+.section {
+  position: relative;
+  padding: 40px 0;
+  @media screen and (max-width: $desktopWidth) {
+    padding: 36px 0;
+  }
+  @media screen and (max-width: $desktopWidth) {
+    padding: 28px 0;
+  }
+  @media screen and (max-width: $desktopWidth) {
+    padding: 20px 0;
+  }
 }
+
+// .wrapper {
+//   display: flex;
+//   flex-direction: column;
+//   margin: 0 auto;
+//   min-height: 100vh;
+// }
+
+// .content-wrapper {
+//   display: flex;
+//   flex-direction: column;
+//   min-height: 100vh;
+// }
+
+// .container {
+//   width: 100%;
+//   flex: 0 0 auto;
+//   position: relative;
+//   margin: 0 auto;
+//   max-width: $desktopWidth;
+//   @media screen and (max-width: $smDesktopWidth) {
+//     max-width: tabletWidth;
+//   }
+//   @media screen and (max-width: $tabletWidth) {
+//     max-width: phoneWidth;
+//   }
+//   @media screen and (max-width: $phoneWidth) {
+//     max-width: smPhoneWidth;
+//   }
+// }
+
+// Page structure
+html,
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  text-align: center;
+}
+
+main {
+  flex: auto;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+}
+
+@import "modules/header.scss"; 
+@import "modules/main-section.scss";
+@import "modules/footer.scss";

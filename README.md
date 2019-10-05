@@ -1,7 +1,5 @@
-# Webpack config
+# Webpack starter template
 
-![](https://github.com/serg-gavel/sg-webpack_template/blob/master/webpck.png)
-
-
- `yarn add webpack webpack-cli webpack-dev-server path --dev`
+`yarn install`
  
+<img src="https://github.com/serg-gavel/sg-webpack-starter-template/blob/master/src/assets/img/logo.png" alt="logo" style="width:320px;"/>

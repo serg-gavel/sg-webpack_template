@@ -1,3 +1,8 @@
+// For JS files
 import "./js/various";
-import './assets/css/main.css' // CSS
+
+// For SCSS files
 import "./assets/scss/main.scss";
+
+// For CSS
+// import './assets/css/main.css'

@@ -2,7 +2,7 @@
   "name": "sg-webpack_template",
   "version": "1.0.0",
   "description": "Webpack template",
-  "repository": "https://github.com/serg-gavel/sg-webpack_template",
+  "repository": "https://github.com/serg-gavel/sg-webpack-starter-template",
   "author": "Sergey Gavelyuk",
   "license": "MIT",
   "main": "index.js",
@@ -14,27 +14,35 @@
     "> 1%",
     "last 3 version"
   ],
+  "keywords": [
+    "webpack",
+    "webpack4",
+    "merge",
+    "babel",
+    "babel7",
+    "scss",
+    "dev",
+    "config"
+  ],
   "devDependencies": {
     "@babel/core": "^7.6.2",
     "@babel/preset-env": "^7.6.2",
     "autoprefixer": "^9.6.1",
     "babel-loader": "^8.0.6",
+    "copy-webpack-plugin": "^5.0.4",
     "css-loader": "^3.2.0",
     "css-mqpacker": "^7.0.0",
     "cssnano": "^4.1.10",
+    "file-loader": "^4.2.0",
+    "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.12.0",
-    "path": "^0.12.7",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
     "webpack": "^4.41.0",
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.8.1",
-    "webpack-merge": "^4.2.2",
-    "copy-webpack-plugin": "^5.0.4",
-    "file-loader": "^4.2.0",
-    "html-webpack-plugin": "^3.2.0"
-  },
-  "dependencies": {}
+    "webpack-merge": "^4.2.2"
+  }
 }

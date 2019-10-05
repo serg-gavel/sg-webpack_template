@@ -1,0 +1,31 @@
+// Fonts section
+$mainFont: "Montserrat", Helvetica, Arial, sans-serif;
+
+// Font size section
+$mainFontColor: #101010;
+$mainFontSize: 18px;
+$mainFontWeight: 400;
+$mainLineHeight: 1.4;
+
+$desktopWidth: 1280px;
+$smDesktopWidth: 980px;
+$tabletWidth: 768px;
+$phoneWidth: 480px;
+$smPhoneWidth: 320px;
+
+// Main color scheme
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$success-color: #28a745;
+$danger-color: #dc3545;
+$warning-color: #ffc107;
+$info-color: #17a2b8;
+$light-color: #f8f9fa;
+$dark-color: #343a40;
+$white-color: #fff;
+
+// webpack
+$webpack-color-dark: #2B3A42; // Outer space
+$webpack-color-light: #f2f2f2; // Concrete
+$webpack-color-primary: #1d78c1; // Denim
+$webpack-color-secondary: #8dd6f9; //Malibu

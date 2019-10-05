@@ -1,2 +1,2 @@
-let add = (a, b) => a + b;
-console.log(add(4, 3));
+// Write some your JS code here
+console.log("Various JS is correctly connected...");

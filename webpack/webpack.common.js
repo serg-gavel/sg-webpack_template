@@ -19,10 +19,9 @@ module.exports = {
   externals: {
     paths: PATHS
   },
-
   entry: {
     app: PATHS.src
-    // module: `${PATHS.src}/another-module.js`,
+    // module: `${PATHS.src}/name-module.js`,
   },
   output: {
     filename: `${PATHS.assets}js/[name].[hash].js`,
@@ -43,22 +42,31 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "babel-loader",
+        exclude: "/node_modules/"
+      },
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        exclude: /node_modules/,
         loader: "file-loader",
         options: {
           name: "[name].[ext]"
         }
       },
       {
-        test: /\.(png|jpe?g|gif|svg)$/,
+        test: /\.(png|jp?eg|gif|svg)$/,
         exclude: /node_modules/,
         loader: "file-loader",
-        options: { name: "[name].[ext]" }
+        options: {
+          name: "[name].[ext]"
+        }
       },
       {
         test: /\.scss$/,
+        exclude: /node_modules/,
         use: [
           "style-loader",
           MiniCssExtractPlugin.loader,
@@ -69,6 +77,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
+        exclude: /node_modules/,
         use: [
           "style-loader",
           MiniCssExtractPlugin.loader,
@@ -79,22 +88,15 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      hash: false,
-      template: `${PATHS.src}/index.html`,
-      filename: "./index.html"
-    }),
     new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // all options are optional
-      filename: `${PATHS.assets}css/[name].[contenthash].css`,
-      chunkFilename: "[id].css",
-      ignoreOrder: false // Enable to remove warnings about conflicting order
+      filename: `${PATHS.assets}css/[name].[contenthash].css`
     }),
     new CopyWebpackPlugin([
-      { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },
+      { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
+      { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
       { from: `${PATHS.src}/static`, to: "" }
     ]),
+
     ...PAGES.map(
       page =>
         new HtmlWebpackPlugin({
