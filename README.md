@@ -1,4 +1,4 @@
-# Webpack starter template
+## Webpack starter template
 
 `yarn install` - to install dependencies
 
